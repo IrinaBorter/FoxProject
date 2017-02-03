@@ -1,0 +1,2 @@
+# FoxProject
+Angular training project
