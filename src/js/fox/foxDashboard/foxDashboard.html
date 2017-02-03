@@ -1,0 +1,13 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-2" ng-repeat="fox in foxes">
+            <div class="thumbnail">
+                <img ng-src="{{fox.image}}" alt="Fox">
+                <div class="caption">
+                    <h3><a ui-sref="foxProfile({foxId: fox.id})">{{fox.name}}</a></h3>
+                    <p>Age: {{fox.age}} y.o.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
