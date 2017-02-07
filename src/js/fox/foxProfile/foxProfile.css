@@ -1,3 +1,24 @@
 .fox-profile-thumbnail {
-    width: 50%
+    width: 50%;
+    position: relative;
+}
+
+.bookmark-btn {
+    width: 90px;
+    position: absolute;
+}
+
+.back-btn {
+    top: 0;
+    left: -90px;
+}
+
+.edit-btn {
+    top: 40px;
+    left: -90px;
+}
+
+.delete-btn {
+    top: 80px;
+    left: -90px;
 }
