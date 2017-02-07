@@ -10,15 +10,30 @@
     <div class="form-group">
         <label for="inputDate">Birthday date</label>
         <input type="date" id="inputDate" placeholder="Date" ng-model="fox.birthday">
-        <p class="help-block">For example, 22.02.2002</p>
+        <p class="help-block">For example, 02.22.2002</p>
     </div>
     <div class="form-group">
-        <label for="inputColor">Color</label>
-        <input type="text" class="form-control" id="inputColor" placeholder="Color" ng-model="fox.color">
+        <div class="dropdown">
+            <label for="repeatSelect"> Select color: </label>
+            <select name="repeatSelect" id="repeatSelect" ng-model="fox.color" class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <option ng-repeat="color in colors" value="{{color}}">{{color}}</option>
+            </select>
+        </div>
     </div>
     <div class="form-group">
         <label for="inputLink">Link to image</label>
         <input type="text" class="form-control" id="inputLink" placeholder="Name" ng-model="fox.image">
     </div>
-    <button type="button" class="btn btn-default" ng-click="addFox()">Create</button>
+    <div class="form-group">
+        <div class="btn-group" role="group"  ng-if="save">
+            <button type="button" class="btn btn-default" ng-click="save()">Save</button>
+        </div>
+        <div class="btn-group" role="group"  ng-if="save">
+            <button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
+        </div>
+        <div class="btn-group" role="group" ng-if="addFox">
+            <button type="button" class="btn btn-default" ng-click="addFox()">Create</button>
+        </div>
+    </div>
+
 </form>

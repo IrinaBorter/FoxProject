@@ -13,10 +13,11 @@ export default module => {
                 })
                 .state('foxProfile', {
                     url: '/foxes/:foxId',
-                    template: '<div fox-profile></div>',
-                    controller: function ($state) {
-                        console.log($state.current.name);
-                    }
+                    template: '<div fox-profile></div>'
+                })
+                .state('edit', {
+                    url: '/foxes/:id/edit',
+                    template: '<div edit-fox-profile></div>'
                 });
             $urlRouterProvider
                 .otherwise('/dashboard');
