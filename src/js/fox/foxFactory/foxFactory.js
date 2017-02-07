@@ -75,17 +75,23 @@ export default module => {
                     image: 'http://static.boredpanda.com/blog/wp-content/uploads/2016/02/juniper-fox-happiest-instagram-9.jpg'
                 },
             ];
+            const foxesColors = ['red', 'grey', 'ginger', 'blue', 'black', 'green', 'pink', 'yellow'];
             const DEFAULT_IMAGE = 'http://static.boredpanda.com/blog/wp-content/uploads/2016/02/juniper-fox-happiest-instagram-9.jpg';
 
             function getFoxes() {
                 return foxesArray;
             }
 
-            function addFox(fox) {
+            function getFoxesColors() {
+                return foxesColors;
+            }
+
+            function add(fox) {
+                fox.id = foxesArray.length + 1;
                 foxesArray.push(fox);
             }
 
-            function deleteFox(fox) {
+            function remove(fox) {
                 const index = foxesArray.indexOf(fox);
 
                 if (index >= 0 && index < foxesArray.length) {
@@ -94,9 +100,19 @@ export default module => {
             }
 
             function at(id) {
-                if (id > 0 && id <= foxesArray.length) {
-                    return foxesArray.filter(item => item.id === id)[0];
-                }
+                return foxesArray.filter(item => item.id === id)[0];
+            }
+
+            function indexOf(fox) {
+                return foxesArray.indexOf(fox);
+            }
+
+            function edit(newFox) {
+                foxesArray.forEach((fox, index, array) => {
+                    if (fox.id === newFox.id) {
+                        array[index] = newFox;
+                    }
+                });
             }
 
             function getDefaultImage() {
@@ -105,10 +121,13 @@ export default module => {
 
             return {
                 getFoxes,
-                addFox,
-                deleteFox,
+                add,
+                remove,
                 at,
-                getDefaultImage
+                indexOf,
+                edit,
+                getDefaultImage,
+                getFoxesColors
             };
         }
     ]);
