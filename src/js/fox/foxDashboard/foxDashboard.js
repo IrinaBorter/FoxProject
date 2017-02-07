@@ -17,7 +17,7 @@ export default module => {
                     return fox;
                 });
                 scope.goToFoxProfile = function(fox) {
-                    $state.go('foxProfile', {foxId: fox.id, fox: fox});
+                    $state.go('foxProfile', {foxId: fox.id});
                 }
             }
         }
