@@ -13,7 +13,6 @@ export default module => {
                     if (!fox.image) {
                         fox.image = Fox.getDefaultImage();
                     }
-
                     return fox;
                 });
                 scope.goToFoxProfile = function(fox) {
