@@ -1,28 +1,29 @@
 <form>
     <div class="form-group">
         <label for="inputName">Name</label>
-        <input type="text" class="form-control" id="inputName" placeholder="Name" ng-model="fox.name">
+        <input type="text" class="form-control" id="inputName" placeholder="Name" ng-model="fox.name" required>
+        <span ng-show="fox.name.$error.required">Username is required.</span>
     </div>
     <div class="form-group">
         <label for="inputAge">Age</label>
-        <input type="number" class="form-control" id="inputAge" placeholder="Age" ng-model="fox.age">
+        <input type="number" class="form-control" id="inputAge" placeholder="Age" ng-model="fox.age" required>
     </div>
     <div class="form-group">
         <label for="inputDate">Birthday date</label>
-        <input type="date" id="inputDate" placeholder="Date" ng-model="fox.birthday">
+        <input type="date" id="inputDate" placeholder="Date" ng-model="fox.birthday" required>
         <p class="help-block">For example, 02.22.2002</p>
     </div>
     <div class="form-group">
         <div class="dropdown">
             <label for="repeatSelect"> Select color: </label>
-            <select name="repeatSelect" id="repeatSelect" ng-model="fox.color" class="dropdown-menu" aria-labelledby="dropdownMenu2">
+            <select name="repeatSelect" id="repeatSelect" ng-model="fox.color" class="dropdown-menu" aria-labelledby="dropdownMenu2" required>
                 <option ng-repeat="color in colors" value="{{color}}">{{color}}</option>
             </select>
         </div>
     </div>
     <div class="form-group">
         <label for="inputLink">Link to image</label>
-        <input type="text" class="form-control" id="inputLink" placeholder="Name" ng-model="fox.image">
+        <input type="text" class="form-control" id="inputLink" placeholder="Name" ng-model="fox.image" required>
     </div>
     <div class="form-group">
         <div class="btn-group" role="group"  ng-if="save">

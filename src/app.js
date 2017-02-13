@@ -10,4 +10,5 @@ require('./js/fox/foxDashboard/foxDashboard').default(app);
 require('./js/fox/createFoxProfile/createFoxProfile').default(app);
 require('./js/fox/editFoxProfile/editFoxProfile').default(app);
 require('./js/router/router').default(app);
+require('./js/fox/foxFilter/foxFilter').default(app);
 require('./js/modalFactory/modalFactory').default(app);

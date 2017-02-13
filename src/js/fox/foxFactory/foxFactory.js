@@ -75,6 +75,7 @@ export default module => {
                     image: 'http://static.boredpanda.com/blog/wp-content/uploads/2016/02/juniper-fox-happiest-instagram-9.jpg'
                 },
             ];
+            const fields = ['name', 'age', 'color'];
             const foxesColors = ['red', 'grey', 'ginger', 'blue', 'black', 'green', 'pink', 'yellow'];
             const DEFAULT_IMAGE = 'http://static.boredpanda.com/blog/wp-content/uploads/2016/02/juniper-fox-happiest-instagram-9.jpg';
 
@@ -119,6 +120,10 @@ export default module => {
                 return DEFAULT_IMAGE;
             }
 
+            function getFields() {
+                return fields;
+            }
+
             return {
                 getFoxes,
                 add,
@@ -127,7 +132,8 @@ export default module => {
                 indexOf,
                 edit,
                 getDefaultImage,
-                getFoxesColors
+                getFoxesColors,
+                getFields,
             };
         }
     ]);

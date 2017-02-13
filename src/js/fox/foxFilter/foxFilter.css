@@ -1,0 +1,12 @@
+div[fox-filter] {
+    padding-left: 15px;
+    margin-bottom: 30px;
+}
+
+.form-group > * {
+    display: inline-block;
+}
+
+.filtered-value {
+    width: auto;
+}

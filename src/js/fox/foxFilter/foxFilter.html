@@ -1,0 +1,11 @@
+<form>
+    <div class="form-group">
+        <div class="dropdown">
+            <label for="repeatSelect"> Filter By: </label>
+            <select name="repeatSelect" id="repeatSelect" ng-model="selectedField" class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <option ng-repeat="field in fields" value="{{field}}">{{field}}</option>
+            </select>
+        </div>
+        <input type="text" class="filtered-value form-control" placeholder="Value" ng-model="value">
+    </div>
+</form>

@@ -11,11 +11,26 @@ export default module => {
 
             function preLink(scope) {
                 scope.colors = Fox.getFoxesColors();
+                scope.fox = {
+                    name: '',
+                    age: null,
+                    birthday: '',
+                    color: 'ginger'
+                };
 
                 scope.addFox = function() {
-                    Fox.add(scope.fox);
-                    scope.fox = {};
-                    $state.go('dashboard');
+                    let isValid = true;
+
+                    Object.keys(scope.fox).forEach(key => {
+                        if (!scope.fox[key]) {
+                            isValid = false;
+                        }
+                    });
+
+                    if (isValid) {
+                        Fox.add(scope.fox);
+                        $state.go('dashboard');
+                    }
                 };
             }
         }
